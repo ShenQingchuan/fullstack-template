@@ -1,0 +1,31 @@
+{
+  "name": "@fullstack-template/web",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --fix",
+    "lint:check": "eslint ."
+  },
+  "dependencies": {
+    "@vueuse/core": "catalog:vue-family",
+    "pinia": "catalog:vue-family",
+    "vue": "catalog:vue-family",
+    "vue-i18n": "catalog:vue-family",
+    "vue-router": "catalog:vue-family"
+  },
+  "devDependencies": {
+    "@unocss/preset-uno": "catalog:unocss-family",
+    "@unocss/preset-wind4": "catalog:unocss-family",
+    "@unocss/vite": "catalog:unocss-family",
+    "@vitejs/plugin-vue": "catalog:vite-family",
+    "@vue/tsconfig": "catalog:vue-family",
+    "unocss": "catalog:unocss-family",
+    "vite": "catalog:vite-family",
+    "vite-plugin-inspect": "catalog:vite-family",
+    "vue-tsc": "catalog:vue-family"
+  }
+}

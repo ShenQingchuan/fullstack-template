@@ -1,0 +1,59 @@
+catalogMode: prefer
+
+cleanupUnusedCatalogs: true
+
+shellEmulator: true
+
+trustPolicy: no-downgrade
+
+packages:
+  - packages/*
+  - apps/*
+
+overrides:
+  vite: npm:rolldown-vite@latest
+
+catalogs:
+  dev-tools:
+    '@antfu/eslint-config': ^6.4.2
+    '@types/node': ^24.10.1
+    '@typescript/native-preview': latest
+    eslint: ^9.39.1
+    tsdown: ^0.17.0
+    typescript: ^5.9.3
+  git-tools:
+    '@commitlint/cli': ^20.2.0
+    '@commitlint/config-conventional': ^20.2.0
+    commitlint: ^20.2.0
+    lint-staged: ^16.2.7
+    simple-git-hooks: ^2.13.1
+  nest-family:
+    '@nestjs/common': ^10.3.9
+    '@nestjs/core': ^10.3.9
+    '@nestjs/platform-express': ^10.3.9
+    reflect-metadata: ^0.2.2
+    rxjs: ^7.8.1
+  unocss-family:
+    '@unocss/preset-uno': ^66.5.10
+    '@unocss/preset-wind4': ^66.5.10
+    '@unocss/vite': ^66.5.10
+    unocss: ^66.5.10
+  vite-family:
+    '@vitejs/plugin-vue': ^6.0.2
+    vite: ^7.2.10
+    vite-plugin-inspect: ^11.3.3
+    vitest: ^4.0.15
+  vue-family:
+    '@vue/tsconfig': ^0.8.1
+    '@vueuse/core': ^14.1.0
+    pinia: ^3.0.4
+    vue: ^3.5.25
+    vue-i18n: ^11.2.2
+    vue-router: ^4.6.3
+    vue-tsc: ^3.1.6
+onlyBuiltDependencies:
+  - '@nestjs/core'
+  - esbuild
+  - simple-git-hooks
+  - unrs-resolver
+  - vue-demi

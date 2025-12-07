@@ -1,0 +1,41 @@
+{
+  "name": "fullstack-template",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@10.24.0",
+  "scripts": {
+    "dev": "pnpm -r --parallel dev",
+    "build": "tsdown && pnpm -r build",
+    "test": "vitest",
+    "lint": "eslint .",
+    "typecheck": "pnpm -r typecheck",
+    "prepare": "simple-git-hooks"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "catalog:dev-tools",
+    "@commitlint/cli": "catalog:git-tools",
+    "@commitlint/config-conventional": "catalog:git-tools",
+    "@types/node": "catalog:dev-tools",
+    "@typescript/native-preview": "catalog:dev-tools",
+    "commitlint": "catalog:git-tools",
+    "eslint": "catalog:dev-tools",
+    "lint-staged": "catalog:git-tools",
+    "simple-git-hooks": "catalog:git-tools",
+    "tsdown": "catalog:dev-tools",
+    "typescript": "catalog:dev-tools",
+    "vitest": "catalog:vite-family"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged",
+    "commit-msg": "pnpm commitlint --edit ${1}"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,vue}": [
+      "eslint --fix"
+    ],
+    "*.{json,yml,yaml}": [
+      "eslint --fix"
+    ]
+  }
+}
