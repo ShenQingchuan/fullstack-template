@@ -12,11 +12,18 @@
     "@nestjs/common": "catalog:nest-family",
     "@nestjs/core": "catalog:nest-family",
     "@nestjs/platform-express": "catalog:nest-family",
-    "reflect-metadata": "catalog:nest-family",
-    "rxjs": "catalog:nest-family"
+    "cls-rtracer": "catalog:logger-family",
+    "nanoid": "catalog:nest-family",
+    "nestjs-pino": "catalog:logger-family",
+    "pino": "catalog:logger-family",
+    "pino-http": "catalog:logger-family",
+    "pino-pretty": "catalog:logger-family",
+    "pino-roll": "catalog:logger-family",
+    "reflect-metadata": "catalog:nest-family"
   },
   "devDependencies": {
     "@nestjs/testing": "catalog:nest-family",
+    "@types/express": "catalog:logger-family",
     "@types/node": "catalog:dev-tools",
     "tsx": "catalog:dev-tools",
     "typescript": "catalog:dev-tools"

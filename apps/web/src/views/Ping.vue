@@ -46,7 +46,7 @@ async function sendPing() {
 <template>
   <div class="min-h-screen bg-white">
     <!-- Main Content -->
-    <div class="max-w-2xl mx-auto px-8 py-16">
+    <div class="flex flex-col gap-4 max-w-2xl mx-auto px-8 py-16">
       <!-- Back Button -->
       <button
         class="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 mb-8 transition-colors"
@@ -55,31 +55,28 @@ async function sendPing() {
         <span>←</span>
         <span>Back</span>
       </button>
-      <h1 class="text-4xl tracking-tight mb-16">
+      <h1 class="text-4xl tracking-tight mb-8">
         Ping Pong Test
       </h1>
 
       <!-- Form Section -->
-      <div class="space-y-8">
+      <div class="space-y-8 flex flex-col gap-4">
         <div>
-          <label for="message" class="block text-sm mb-3 uppercase tracking-wider">
-            Message
-          </label>
           <input
             id="message"
             v-model="message"
             type="text"
             :placeholder="t('placeholder_message')"
-            class="w-full px-4 py-3 bg-white text-gray-900 placeholder-gray-500 border border-gray-200 focus:outline-none focus:border-gray-400 transition-colors"
+            class="w-full px-4 py-3 bg-white rounded-lg text-gray-900 placeholder-gray-500 border border-gray-200 focus:outline-none focus:border-gray-400 transition-colors"
           >
         </div>
 
         <button
           :disabled="loading || !message.trim()"
-          class="w-full bg-black text-white py-4 px-8 font-medium tracking-wider hover:bg-gray-900 disabled:bg-gray-300 disabled:cursor-not-allowed transition-all duration-200 uppercase"
+          class="w-full bg-black text-white rounded-lg py-4 px-8 font-medium tracking-wider hover:bg-gray-900 disabled:bg-gray-300 disabled:cursor-not-allowed transition-all duration-200 uppercase"
           @click="sendPing"
         >
-          {{ loading ? t('common_loading') : 'Send Ping' }}
+          {{ loading ? t('common_loading') : t('send') }}
         </button>
       </div>
 
@@ -87,7 +84,7 @@ async function sendPing() {
       <div v-if="response || error" class="mt-16 space-y-8">
         <div v-if="response" class="p-8 bg-gray-50 border border-gray-200">
           <h2 class="text-sm mb-4 uppercase tracking-wider">
-            Response
+            {{ t('response') }}
           </h2>
           <p class="text-gray-900 font-mono text-lg">
             {{ response }}

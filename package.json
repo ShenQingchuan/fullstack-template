@@ -31,14 +31,10 @@
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm test --run && pnpm lint-staged",
-    "commit-msg": "pnpm commitlint --edit ${1}",
-    "pre-push": "pnpm test --run"
+    "commit-msg": "pnpm commitlint --edit ${1}"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,vue}": [
-      "eslint --fix"
-    ],
-    "*.{json,yml,yaml}": [
+    "*.{js,jsx,ts,tsx,vue,json,yml,yaml}": [
       "eslint --fix"
     ]
   }

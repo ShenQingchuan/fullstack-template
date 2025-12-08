@@ -9,6 +9,8 @@
   "home_try_example": "Try API Example",
   "about_title": "About",
   "about_description": "This is a fullstack template application showcasing modern web development practices.",
+  "send": "Send",
+  "response": "Response",
   "common_loading": "Loading...",
   "common_error": "Error",
   "common_retry": "Retry",

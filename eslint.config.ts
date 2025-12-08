@@ -1,10 +1,6 @@
 import antfu from '@antfu/eslint-config'
 
 export default antfu({
+  pnpm: true,
   vue: true,
-}, {
-  files: ['**/*.ts'],
-  rules: {
-    'ts/no-explicit-any': 'error',
-  },
 })

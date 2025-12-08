@@ -9,6 +9,8 @@
   "home_try_example": "尝试 API 示例",
   "about_title": "关于",
   "about_description": "这是一个展示现代 Web 开发实践的全栈模板应用程序。",
+  "send": "发送",
+  "response": "响应",
   "common_loading": "加载中...",
   "common_error": "错误",
   "common_retry": "重试",

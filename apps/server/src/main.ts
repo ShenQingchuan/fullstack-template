@@ -1,21 +1,22 @@
 import process from 'node:process'
-import { ConsoleLogger } from '@nestjs/common'
 import { NestFactory } from '@nestjs/core'
+import { Logger } from 'nestjs-pino'
 import { AppModule } from './app.module'
 
 async function bootstrap() {
-  const logger = new ConsoleLogger()
   const app = await NestFactory.create(AppModule, {
-    logger,
+    bufferLogs: true,
   })
 
-  // Enable CORS for mobile development
+  const logger = app.get(Logger)
+  app.useLogger(logger)
+
   app.enableCors({
-    origin: true, // Allow all origins for development
+    origin: true,
     credentials: true,
   })
 
-  const host = process.env.HOST || '0.0.0.0' // Bind to all interfaces
+  const host = process.env.HOST || '0.0.0.0'
   const port = process.env.PORT ? Number(process.env.PORT) : 7070
 
   await app.listen(port, host)
