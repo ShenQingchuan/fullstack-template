@@ -1,0 +1,18 @@
+{
+  "app_name": "全栈模板",
+  "app_description": "一个现代化的全栈应用模板",
+  "nav_home": "首页",
+  "nav_about": "关于",
+  "home_title": "欢迎使用全栈模板",
+  "home_subtitle": "基于 Vue 3 和 NestJS 构建的现代化全栈应用",
+  "home_get_started": "开始使用",
+  "home_try_example": "尝试 API 示例",
+  "about_title": "关于",
+  "about_description": "这是一个展示现代 Web 开发实践的全栈模板应用程序。",
+  "common_loading": "加载中...",
+  "common_error": "错误",
+  "common_retry": "重试",
+  "common_cancel": "取消",
+  "common_confirm": "确认",
+  "placeholder_message": "输入消息"
+}

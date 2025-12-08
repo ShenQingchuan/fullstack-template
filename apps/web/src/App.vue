@@ -1,9 +1,13 @@
 <script setup lang="ts">
-// App root component
+import Header from './components/Header.vue'
 </script>
 
 <template>
-  <div class="min-h-screen bg-gray-100 p-8">
-    <router-view />
+  <div class="min-h-screen bg-white text-gray-900">
+    <Header />
+
+    <main>
+      <router-view />
+    </main>
   </div>
 </template>

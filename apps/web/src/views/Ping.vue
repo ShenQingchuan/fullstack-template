@@ -1,5 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { useRouter } from 'vue-router'
+
+const { t } = useI18n()
+const router = useRouter()
 
 const message = ref('')
 const response = ref('')
@@ -30,7 +35,7 @@ async function sendPing() {
     response.value = data.msg
   }
   catch (err) {
-    error.value = err instanceof Error ? err.message : 'An unknown error occurred'
+    error.value = err instanceof Error ? err.message : t('common_error')
   }
   finally {
     loading.value = false
@@ -39,44 +44,65 @@ async function sendPing() {
 </script>
 
 <template>
-  <div class="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
-    <h1 class="text-2xl font-bold mb-6 text-center">
-      Ping Pong Test
-    </h1>
-
-    <div class="mb-6">
-      <label for="message" class="block text-sm font-medium mb-2">Message:</label>
-      <input
-        id="message"
-        v-model="message"
-        type="text"
-        placeholder="Enter a message"
-        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+  <div class="min-h-screen bg-white">
+    <!-- Main Content -->
+    <div class="max-w-2xl mx-auto px-8 py-16">
+      <!-- Back Button -->
+      <button
+        class="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 mb-8 transition-colors"
+        @click="router.back()"
       >
-    </div>
+        <span>←</span>
+        <span>Back</span>
+      </button>
+      <h1 class="text-4xl tracking-tight mb-16">
+        Ping Pong Test
+      </h1>
 
-    <button
-      :disabled="loading || !message.trim()"
-      class="w-full bg-primary text-white py-2 px-4 rounded-md font-medium hover:bg-primary/90 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
-      @click="sendPing"
-    >
-      {{ loading ? 'Sending...' : 'Send Ping' }}
-    </button>
+      <!-- Form Section -->
+      <div class="space-y-8">
+        <div>
+          <label for="message" class="block text-sm mb-3 uppercase tracking-wider">
+            Message
+          </label>
+          <input
+            id="message"
+            v-model="message"
+            type="text"
+            :placeholder="t('placeholder_message')"
+            class="w-full px-4 py-3 bg-white text-gray-900 placeholder-gray-500 border border-gray-200 focus:outline-none focus:border-gray-400 transition-colors"
+          >
+        </div>
 
-    <div v-if="response" class="mt-6 p-4 bg-gray-100 rounded-md">
-      <h2 class="font-semibold mb-2">
-        Response:
-      </h2>
-      <p class="text-gray-700">
-        {{ response }}
-      </p>
-    </div>
+        <button
+          :disabled="loading || !message.trim()"
+          class="w-full bg-black text-white py-4 px-8 font-medium tracking-wider hover:bg-gray-900 disabled:bg-gray-300 disabled:cursor-not-allowed transition-all duration-200 uppercase"
+          @click="sendPing"
+        >
+          {{ loading ? t('common_loading') : 'Send Ping' }}
+        </button>
+      </div>
 
-    <div v-if="error" class="mt-6 p-4 bg-red-100 text-red-700 rounded-md">
-      <h2 class="font-semibold mb-2">
-        Error:
-      </h2>
-      <p>{{ error }}</p>
+      <!-- Response Section -->
+      <div v-if="response || error" class="mt-16 space-y-8">
+        <div v-if="response" class="p-8 bg-gray-50 border border-gray-200">
+          <h2 class="text-sm mb-4 uppercase tracking-wider">
+            Response
+          </h2>
+          <p class="text-gray-900 font-mono text-lg">
+            {{ response }}
+          </p>
+        </div>
+
+        <div v-if="error" class="p-8 bg-gray-50 border-l-4 border-black">
+          <h2 class="text-sm mb-4 uppercase tracking-wider">
+            {{ t('common_error') }}
+          </h2>
+          <p class="text-gray-900 font-mono">
+            {{ error }}
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </template>

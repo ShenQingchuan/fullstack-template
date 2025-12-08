@@ -1,0 +1,18 @@
+{
+  "app_name": "Fullstack Template",
+  "app_description": "A modern fullstack application template",
+  "nav_home": "Home",
+  "nav_about": "About",
+  "home_title": "Welcome to Fullstack Template",
+  "home_subtitle": "A modern fullstack application built with Vue 3 and NestJS",
+  "home_get_started": "Get Started",
+  "home_try_example": "Try API Example",
+  "about_title": "About",
+  "about_description": "This is a fullstack template application showcasing modern web development practices.",
+  "common_loading": "Loading...",
+  "common_error": "Error",
+  "common_retry": "Retry",
+  "common_cancel": "Cancel",
+  "common_confirm": "Confirm",
+  "placeholder_message": "Enter a message"
+}

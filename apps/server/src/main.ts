@@ -9,10 +9,16 @@ async function bootstrap() {
     logger,
   })
 
-  const host = process.env.HOST || 'localhost'
+  // Enable CORS for mobile development
+  app.enableCors({
+    origin: true, // Allow all origins for development
+    credentials: true,
+  })
+
+  const host = process.env.HOST || '0.0.0.0' // Bind to all interfaces
   const port = process.env.PORT ? Number(process.env.PORT) : 7070
 
-  await app.listen(port)
+  await app.listen(port, host)
   logger.log(`Server is listening on http://${host}:${port}`)
 }
 

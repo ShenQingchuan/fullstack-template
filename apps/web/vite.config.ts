@@ -11,10 +11,11 @@ export default defineConfig({
     Inspect(),
   ],
   server: {
+    host: '0.0.0.0', // Bind to all interfaces
     port: 3000,
     proxy: {
       '/api': {
-        target: 'http://localhost:7070',
+        target: 'http://0.0.0.0:7070', // Backend server address
         changeOrigin: true,
         rewrite: path => path.replace(/^\/api/, ''),
       },
