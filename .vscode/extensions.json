@@ -16,6 +16,9 @@
     "sjhuangx.vscode-git-hooks",
 
     // UnoCSS support
-    "antfu.unocss"
+    "antfu.unocss",
+
+    // PNPM Catalogs
+    "antfu.pnpm-catalog-lens"
   ]
 }

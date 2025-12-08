@@ -1,10 +1,12 @@
 import { resolve } from 'node:path'
+import vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
+  plugins: [vue()],
   test: {
     globals: true,
-    environment: 'happy-dom', // Use happy-dom for Vue component testing
+    testTimeout: 5000,
     include: [
       'apps/**/tests/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
       'packages/**/tests/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',
@@ -26,6 +28,34 @@ export default defineConfig({
         '**/coverage/**',
       ],
     },
+    projects: [
+      {
+        test: {
+          name: 'server',
+          include: ['apps/server/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts}'],
+          environment: 'node',
+          testTimeout: 10000,
+        },
+      },
+      {
+        extends: true,
+        test: {
+          name: 'web',
+          include: ['apps/web/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+          environment: 'jsdom',
+          testTimeout: 5000,
+          setupFiles: ['./apps/web/tests/setup.ts'],
+        },
+      },
+      {
+        test: {
+          name: 'packages',
+          include: ['packages/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts}'],
+          environment: 'node',
+          testTimeout: 5000,
+        },
+      },
+    ],
   },
   resolve: {
     alias: {

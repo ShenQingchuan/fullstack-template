@@ -15,7 +15,7 @@ A modern fullstack application template built with Vue 3, NestJS, and TypeScript
 
 ### Prerequisites
 
-- Node.js 18+
+- Node.js 24+
 - pnpm 10+
 
 ### Installation

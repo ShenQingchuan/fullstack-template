@@ -16,8 +16,9 @@
     "rxjs": "catalog:nest-family"
   },
   "devDependencies": {
+    "@nestjs/testing": "catalog:nest-family",
     "@types/node": "catalog:dev-tools",
-    "tsx": "^4.19.2",
+    "tsx": "catalog:dev-tools",
     "typescript": "catalog:dev-tools"
   }
 }

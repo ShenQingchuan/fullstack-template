@@ -22,6 +22,7 @@
     "@unocss/preset-wind4": "catalog:unocss-family",
     "@unocss/vite": "catalog:unocss-family",
     "@vitejs/plugin-vue": "catalog:vite-family",
+    "@vue/test-utils": "catalog:vue-family",
     "@vue/tsconfig": "catalog:vue-family",
     "unocss": "catalog:unocss-family",
     "vite": "catalog:vite-family",
