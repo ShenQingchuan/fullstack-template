@@ -18,8 +18,10 @@
     "@commitlint/config-conventional": "catalog:git-tools",
     "@types/node": "catalog:dev-tools",
     "@typescript/native-preview": "catalog:dev-tools",
+    "@vitest/coverage-v8": "catalog:test-family",
     "commitlint": "catalog:git-tools",
     "eslint": "catalog:dev-tools",
+    "happy-dom": "catalog:test-family",
     "lint-staged": "catalog:git-tools",
     "simple-git-hooks": "catalog:git-tools",
     "tsdown": "catalog:dev-tools",
@@ -28,7 +30,8 @@
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged",
-    "commit-msg": "pnpm commitlint --edit ${1}"
+    "commit-msg": "pnpm commitlint --edit ${1}",
+    "pre-push": "pnpm test --run"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,vue}": [
