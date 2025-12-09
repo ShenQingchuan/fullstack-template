@@ -6,6 +6,7 @@ const isDev = process.env.NODE_ENV === 'development'
 const buildConfig: ReturnType<typeof defineConfig> = defineConfig({
   workspace: {
     include: ['packages/*'],
+    exclude: ['apps/*'],
   },
   dts: true,
   tsconfig: join(import.meta.dirname, 'tsconfig.json'),
@@ -15,6 +16,11 @@ const buildConfig: ReturnType<typeof defineConfig> = defineConfig({
     resolve: {
       conditionNames: ['dev'],
     },
+  },
+  outExtensions: (_ctx) => {
+    return {
+      js: '.js',
+    }
   },
 })
 export default buildConfig

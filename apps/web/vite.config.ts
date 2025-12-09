@@ -10,6 +10,10 @@ export default defineConfig({
     UnoCSS(),
     Inspect(),
   ],
+  build: {
+    outDir: '../server/dist/public',
+    emptyOutDir: true,
+  },
   server: {
     host: '0.0.0.0', // Bind to all interfaces
     port: 3000,

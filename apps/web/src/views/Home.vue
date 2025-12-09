@@ -19,13 +19,6 @@ const { t } = useI18n()
 
       <!-- CTA Buttons -->
       <div class="space-y-4">
-        <router-link
-          to="/ping"
-          class="inline-block px-12 py-4 bg-black text-white font-medium tracking-wider hover:bg-gray-900 transition-colors duration-200"
-        >
-          {{ t('home_get_started') }}
-        </router-link>
-
         <div class="pt-4">
           <router-link
             to="/ping"

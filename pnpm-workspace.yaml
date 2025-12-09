@@ -15,10 +15,10 @@ overrides:
 catalogs:
   dev-tools:
     '@antfu/eslint-config': ^6.5.1
-    '@types/node': ^24.10.1
+    '@types/node': ^24.10.2
     '@typescript/native-preview': latest
     eslint: ^9.39.1
-    tsdown: ^0.17.1
+    tsdown: ^0.17.2
     tsx: ^4.21.0
     typescript: ^5.9.3
   git-tools:
@@ -42,9 +42,10 @@ catalogs:
     '@nestjs/testing': ^11.1.9
     nanoid: ^5.1.6
     reflect-metadata: ^0.2.2
+    zod: ^4.1.13
   test-family:
     '@vitest/coverage-v8': ^4.0.15
-    jsdom: ^27.2.0
+    jsdom: ^27.3.0
   unocss-family:
     '@unocss/preset-uno': ^66.5.10
     '@unocss/preset-wind4': ^66.5.10
@@ -63,7 +64,7 @@ catalogs:
     vue: ^3.5.25
     vue-i18n: ^11.2.2
     vue-router: ^4.6.3
-    vue-tsc: ^3.1.7
+    vue-tsc: ^3.1.8
 onlyBuiltDependencies:
   - '@nestjs/core'
   - esbuild

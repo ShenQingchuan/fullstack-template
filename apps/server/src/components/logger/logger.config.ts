@@ -3,8 +3,11 @@ import { join } from 'node:path'
 import process from 'node:process'
 import * as rTracer from 'cls-rtracer'
 import pino from 'pino'
+import { parseEnv } from '../config/env.js'
 
 const isDevelopment = process.env.NODE_ENV !== 'production'
+const env = parseEnv()
+const enableFileLog = env.ENABLE_FILE_LOG
 
 // ============ Base Configuration ============
 
@@ -61,7 +64,7 @@ function createFileTransport() {
   return pino.transport({
     target: 'pino-roll',
     options: {
-      file: join(process.cwd(), 'logs', 'app'),
+      file: join(import.meta.dirname, '../../logs/app'),
       frequency: 'daily',
       mkdir: true,
       size: '20m',
@@ -93,10 +96,13 @@ function createConsoleTransport() {
 
 // ============ Stream Assembly ============
 
-const streams = [
-  { stream: createFileTransport() },
-  { stream: createConsoleTransport() },
-]
+// Build streams array based on ENABLE_FILE_LOG configuration
+// Console transport is always enabled
+const streams = [{ stream: createConsoleTransport() }]
+// File transport is optional based on ENABLE_FILE_LOG
+if (enableFileLog) {
+  streams.unshift({ stream: createFileTransport() })
+}
 
 // ============ NestJS Pino Configuration ============
 
