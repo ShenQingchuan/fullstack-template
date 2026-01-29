@@ -18,12 +18,30 @@ A modern fullstack application template built with Vue 3, NestJS, and TypeScript
 - Node.js 24+
 - pnpm 10+
 
-### Installation
+### Create a New Project
+
+Using [giget](https://github.com/unjs/giget) (Recommended):
 
 ```bash
-# Clone the repository
-git clone <your-repo-url>
-cd fullstack-template
+# Create a new project from this template
+npx giget gh:shenqingchuan/fullstack-template my-project
+
+# Navigate to the project
+cd my-project
+
+# Install dependencies
+pnpm install
+```
+
+Or clone the repository directly:
+
+```bash
+git clone https://github.com/admin/fullstack-template.git my-project
+cd my-project
+
+# Remove the original git history and start fresh
+rm -rf .git
+git init
 
 # Install dependencies
 pnpm install
