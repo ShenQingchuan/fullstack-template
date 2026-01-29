@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "NODE_ENV=development tsx watch --clear-screen=false --env-file=.env.local src/main.ts",
     "build": "NODE_ENV=production tsc -p tsconfig.json",
+    "start": "pm2-runtime ecosystem.config.json",
     "typecheck": "tsgo --noEmit"
   },
   "dependencies": {
@@ -13,12 +14,14 @@
     "@nestjs/core": "catalog:nest-family",
     "@nestjs/platform-express": "catalog:nest-family",
     "cls-rtracer": "catalog:logger-family",
+    "dotenv": "catalog:nest-family",
     "nanoid": "catalog:nest-family",
     "nestjs-pino": "catalog:logger-family",
     "pino": "catalog:logger-family",
     "pino-http": "catalog:logger-family",
     "pino-pretty": "catalog:logger-family",
     "pino-roll": "catalog:logger-family",
+    "pm2": "catalog:nest-family",
     "reflect-metadata": "catalog:nest-family",
     "zod": "catalog:nest-family"
   },

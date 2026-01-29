@@ -2,7 +2,7 @@ import {
   defineConfig,
   presetAttributify,
   presetIcons,
-  presetUno,
+  presetWebFonts,
   presetWind4,
   transformerDirectives,
   transformerVariantGroup,
@@ -10,18 +10,18 @@ import {
 
 export default defineConfig({
   presets: [
-    presetUno(),
     presetAttributify(),
     presetIcons(),
     presetWind4(),
+    presetWebFonts({
+      fonts: {
+        sans: 'Rubik',
+        mono: 'JetBrains Mono',
+      },
+    }),
   ],
   transformers: [
     transformerDirectives(),
     transformerVariantGroup(),
   ],
-  theme: {
-    colors: {
-      primary: '#42b883',
-    },
-  },
 })

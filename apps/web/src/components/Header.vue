@@ -16,7 +16,7 @@ function toggleLanguage() {
         <!-- Logo/Title -->
         <div
           data-testid="app-name"
-          class="text-xl tracking-wider text-gray-900"
+          class="text-xl text-gray-900"
         >
           {{ t('app_name') }}
         </div>

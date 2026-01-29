@@ -1,6 +1,7 @@
 import type { Params } from 'nestjs-pino'
 import { join } from 'node:path'
 import process from 'node:process'
+import { RequestMethod } from '@nestjs/common'
 import * as rTracer from 'cls-rtracer'
 import pino from 'pino'
 import { parseEnv } from '../config/env.js'
@@ -107,6 +108,9 @@ if (enableFileLog) {
 // ============ NestJS Pino Configuration ============
 
 export const loggerConfig: Params = {
+  // Use new path-to-regexp syntax to avoid deprecation warning
+  // See: https://github.com/pillarjs/path-to-regexp/blob/master/MIGRATION.md
+  forRoutes: [{ path: '{*path}', method: RequestMethod.ALL }],
   pinoHttp: {
     logger: pino(baseConfig, pino.multistream(streams)),
 

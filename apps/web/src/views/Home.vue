@@ -8,7 +8,7 @@ const { t } = useI18n()
   <div class="min-h-screen flex items-center justify-center px-4">
     <div class="max-w-3xl mx-auto text-center">
       <!-- Main Title -->
-      <h1 class="text-6xl tracking-tight mb-8">
+      <h1 class="text-6xl tracking-tight font-bold mb-8">
         {{ t('home_title') }}
       </h1>
 

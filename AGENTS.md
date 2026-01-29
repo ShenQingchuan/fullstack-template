@@ -1,5 +1,3 @@
-# AI Assistant Guidelines for Fullstack Template Project
-
 ## Communication
 - Use Chinese (中文) for all communications and discussions
 
@@ -26,6 +24,10 @@ After any code modifications:
 3. Address all errors before proceeding with further changes
 
 ## Import Rules
+
+- Use `pnpm view ...` to check depedencies version before installing
+- Must use "pnpm catalog" to manage installing new dependencies
+
 - For `apps/server` (NestJS): All import paths must end with `.js` extension due to NodeNext module resolution
 - For `apps/server`: Use explicit dependency injection with `@Inject(...)` in constructor parameters to avoid type-only import warnings
 

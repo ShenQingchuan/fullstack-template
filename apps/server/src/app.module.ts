@@ -11,6 +11,6 @@ import { RequestIdMiddleware } from './middlewares/request-id.middleware.js'
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer.apply(RequestIdMiddleware).forRoutes('{*path}')
+    consumer.apply(RequestIdMiddleware).forRoutes('*path')
   }
 }
