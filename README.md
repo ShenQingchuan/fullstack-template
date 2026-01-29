@@ -24,7 +24,7 @@ Using [giget](https://github.com/unjs/giget) (Recommended):
 
 ```bash
 # Create a new project from this template
-npx giget gh:shenqingchuan/fullstack-template my-project
+pnpx giget gh:shenqingchuan/fullstack-template my-project
 
 # Navigate to the project
 cd my-project
